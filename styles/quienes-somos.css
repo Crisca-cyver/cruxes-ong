@@ -1,4 +1,3 @@
-/* Estilos específicos para la sección Quiénes Somos */
 #quienes-somos {
     margin-top: var(--spacing-sm);
     border-top: none;
@@ -8,8 +7,8 @@
 /* Estilos para la primera fila de Quiénes Somos */
 .quienes-somos-top-row.grid-2 {
     grid-template-columns: 2fr 1fr; /* Texto ancho, imagen estrecha */
-    gap: var(--spacing-lg);
-    margin-bottom: var(--spacing-lg);
+    gap: var(--spacing-xl);
+    margin-bottom: var(--spacing-xl);
 }
 
 /* Estilos para la segunda fila de Quiénes Somos */
@@ -66,7 +65,7 @@
     font-family: var(--font-family);
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-md);
-    text-align: justify;
+    text-align: center;
     font-size: var(--font-size-lg);
     line-height: 1.2;
     font-style: italic;
@@ -85,8 +84,9 @@
 }
 
 .quienes-somos-img {
-    width: 597px;
-    height: 340px;
+    width:400px;
+    height: 270px;
+    margin-bottom: var(--spacing-xl);
     display: block;
     max-width: 100%; /* Asegurar que la imagen no se desborde */ /* Mantener la proporción */
     border-radius: var(--border-radius);
@@ -124,7 +124,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-#btn-mas-info, #btn-mas-info-objetivos {
+#btn-mas-info, #btn-mas-info-objetivos, #btn-mas-info-equipo {
     cursor:pointer; 
     color:#444;
     text-decoration:underline;
@@ -148,7 +148,7 @@
 
 .quienes-somos-ejes-img {
     width: 597px;
-    height: 340px;
+    height: 200px;
     max-width: 100%; /* Asegurar que la imagen no se desborde */
     height: auto; /* Mantener la proporción */
     display: block;
@@ -212,8 +212,9 @@
 
 /* Estilos para la sección Visión, Misión y Objetivos */
 #vision-mision-objetivos {
-    margin-top: var(--spacing-lg);
-    padding-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-xl);
+    padding-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-lg);
     border-top: 2px solid #F2920C;
 }
 
@@ -221,18 +222,69 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+}
+
+/* Estilos para las cajas individuales */
+#vision-mision-objetivos .vision,
+#vision-mision-objetivos .mision,
+#vision-mision-objetivos .objetivo-general {
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+   
+    min-height: 200px;
+  
+    justify-content: flex-start;
+}
+
+/* Bordes de colores específicos para cada caja */
+#vision-mision-objetivos .vision {
+    
+    border-radius: 15px;
+    margin-top: var(--spacing-lg);
+    border: 15px solid #ffeb3b; /* Amarillo */
+}
+
+#vision-mision-objetivos .mision {
+    border-radius: 15px;
+    margin-top: var(--spacing-lg);
+    border: 15px solid #ff9800; /* Naranja-amarillo */
+}
+
+#vision-mision-objetivos .objetivo-general {
+    border-radius: 15px;
+    margin-top: var(--spacing-lg);
+    border: 15px solid #ea580c; /* Naranja */
 }
 
 #vision-mision-objetivos .section-title {
     font-family: var(--font-family);
     font-size: var(--font-size-xxl);
-    color: #F2920C;
+    color: #E84E1D; /* Color naranja para los títulos */
     margin-bottom: var(--spacing-md);
     border-bottom: none;
     padding-bottom: 0;
-    text-align: left;
-    margin-top: var(--spacing-sm);
+    text-align: center;
+    margin-top: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Estilos para el contenido de las cajas */
+#vision-mision-objetivos .vision-content,
+#vision-mision-objetivos .mision-content,
+#vision-mision-objetivos .objetivo-content {
+    font-family: var(--font-family);
+    font-size: var(--font-size-lg);
+    text-align: justify;
+    line-height: 1.4;
+    margin-bottom: 0;
+    color: #000;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
 }
 
 /* Estilos para listas dentro de la sección Visión, Misión, Objetivos */
@@ -286,7 +338,7 @@
 
 #nuestro-equipo .section-title {
     font-family: var(--font-family);
-    font-size: var(--font-size-xxxl); 
+    font-size: var(--font-size-xxl); 
     color: #F2920C; 
     margin-bottom: var(--spacing-sm); 
     text-align: left;
@@ -311,8 +363,15 @@
     
     color: var(--color-primary);
     margin-top: var(--spacing-md);
-    text-align: justify;
+    text-align: center !important;
     line-height: 1.2;
+}
+
+/* Estilo adicional con mayor especificidad para asegurar que esté centrado */
+#nuestro-equipo q.quote {
+    text-align: center !important;
+    display: block;
+    width: 100%;
 }
 
 .cards-container {
@@ -386,24 +445,40 @@
   }
   
   .card-back {
-    background: #FDBA74;
-    color: #000;
-    transform: rotateY(180deg);
-    padding: 2rem 1rem;
-    font-size: var(--font-size-lg);
-    text-align: left;
-    display: flex;
-    line-height: 1.2;
-    align-items: center;
-    justify-content: center;
-  }
+  background: #FDBA74;
+  color: #fff;
+  transform: rotateY(180deg);
+  padding: 2rem 1rem;
+  font-size: var(--font-size-lg);
+  text-align: left;
+  display: flex;
+  line-height: 1.2;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Colores específicos para la parte trasera de cada programa */
+.card-flip:nth-child(1) .card-back {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); /* Amarillo-naranja para RSE */
+  color: #fff;
+}
+
+.card-flip:nth-child(2) .card-back {
+  background: linear-gradient(135deg, #FF8C00 0%, #FF6347 100%); /* Naranja para Voluntariado */
+  color: #fff;
+}
+
+.card-flip:nth-child(3) .card-back {
+  background: linear-gradient(135deg, #DC143C 0%, #B22222 100%); /* Rojo para Talleres */
+  color: #fff;
+}
 
 .card-back ul li {
-  color: #000;
+  color: inherit; /* Heredar el color del padre */
 }
 
 .card-back ul li::before {
-  color: #000;
+  color: inherit; /* Heredar el color del padre */
   position: absolute;
   left: 0;
   top: 0.2rem;
@@ -420,7 +495,7 @@
   right: 0;
   bottom: 0;
   height: 70px;
-  background: linear-gradient(135deg, #E84E1D 0%, #F2920C 100%); /* Degradado naranja con colores primarios */
+  background: linear-gradient(135deg, var(--color-yellow) 0%, var(--color-orange) 100%);
   color: white;
   font-size: var(--font-size-xl);
   font-weight: 500;
@@ -433,6 +508,19 @@
   z-index: 2;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
   text-align: center !important; /* Asegurar centrado de texto */
+}
+
+/* Colores específicos para cada programa */
+.card-flip:nth-child(1) .card-title-bar {
+  background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); /* Amarillo-naranja para RSE */
+}
+
+.card-flip:nth-child(2) .card-title-bar {
+  background: linear-gradient(135deg, #FF8C00 0%, #FF6347 100%); /* Naranja para Voluntariado */
+}
+
+.card-flip:nth-child(3) .card-title-bar {
+  background: linear-gradient(135deg, #DC143C 0%, #B22222 100%); /* Rojo para Talleres */
 }
 
 .card-info-indicator {
@@ -477,7 +565,7 @@
 }
 
 .ods-container img {
-    width: 120px; 
+    width: 70px; 
     height: auto;
     margin: 2px; 
 }
@@ -488,7 +576,7 @@
     grid-template-columns: 1fr auto; /* El texto ocupa todo el espacio, la imagen solo lo necesario */
     gap: var(--spacing-lg); /* O el valor de gap que prefieras */
     border-top: 2px solid #F2920C;
-    padding-top: var(--spacing-sm);
+    padding-top: var(--spacing-xl);
 }
 .objetivo-especifico-img-container {
     display: flex;
@@ -536,12 +624,27 @@
     /* Ajustes para la sección Visión, Misión y Objetivos */
     #vision-mision-objetivos .vision-mision-objetivos-grid {
         grid-template-columns: 1fr; /* Una sola columna para apilar */
-        gap: 0; /* Eliminar el gap entre columnas */
+        gap: var(--spacing-md); /* Mantener espacio entre cajas */
+    }
+
+    #vision-mision-objetivos .vision,
+    #vision-mision-objetivos .mision,
+    #vision-mision-objetivos .objetivo-general {
+        min-height: auto;
+        padding: var(--spacing-md);
     }
 
     #vision-mision-objetivos .section-title {
-        text-align: left; /* Centrar títulos en móvil */
-        margin-top: var(--spacing-sm); /* Espaciado entre secciones */
+        text-align: center; /* Mantener centrado en móvil */
+        margin-top: 0;
+        font-size: var(--font-size-xl);
+    }
+
+    #vision-mision-objetivos .vision-content,
+    #vision-mision-objetivos .mision-content,
+    #vision-mision-objetivos .objetivo-content {
+        text-align: justify;
+        font-size: var(--font-size-md);
     }
 
     #vision-mision-objetivos p,
@@ -560,9 +663,12 @@
         margin-top: var(--spacing-sm);
     }
 
-    #nuestro-equipo p,
-    #nuestro-equipo .quote {
+    #nuestro-equipo p {
         text-align: justify;
+    }
+
+    #nuestro-equipo .quote {
+        text-align: center;
     }
 
     .ods-container {
@@ -646,9 +752,24 @@
     }
 
     #vision-mision-objetivos .section-title {
-        font-size: var(--font-size-xxl);
+        font-size: var(--font-size-xl);
         margin-bottom: var(--spacing-sm);
-        margin-top: var(--spacing-sm);
+        margin-top: 0;
+        text-align: center;
+    }
+
+    #vision-mision-objetivos .vision,
+    #vision-mision-objetivos .mision,
+    #vision-mision-objetivos .objetivo-general {
+        padding: var(--spacing-sm);
+        min-height: auto;
+    }
+
+    #vision-mision-objetivos .vision-content,
+    #vision-mision-objetivos .mision-content,
+    #vision-mision-objetivos .objetivo-content {
+        font-size: var(--font-size-md);
+        text-align: justify;
     }
     /* Ajustes específicos para la sección Nuestro Equipo a 480px */
     #nuestro-equipo {
@@ -673,11 +794,22 @@
         margin: 0 0 var(--spacing-sm) 0; /* Ajustar margen inferior si es necesario */
     }
 
-    #nuestro-equipo p,
-    #nuestro-equipo .quote {
+    #nuestro-equipo p {
         text-align: justify;
         font-size: var(--font-size-md); /* Ajuste del tamaño de texto para 480px */
-        width: 100%; /* Asegurar que los párrafos y la cita tomen el 100% del ancho */
+        width: 100%; /* Asegurar que los párrafos tomen el 100% del ancho */
+        box-sizing: border-box; /* Incluir padding y border en el ancho total */
+        overflow-wrap: break-word; /* Romper palabras largas */
+        white-space: normal; /* Asegurar que el texto pueda envolver */
+        padding: 0; /* Eliminar padding */
+        margin: 0 0 var(--spacing-md) 0; /* Ajustar margen inferior si es necesario */
+        line-height: 1.2;
+    }
+
+    #nuestro-equipo .quote {
+        text-align: center;
+        font-size: var(--font-size-md); /* Ajuste del tamaño de texto para 480px */
+        width: 100%; /* Asegurar que la cita tome el 100% del ancho */
         box-sizing: border-box; /* Incluir padding y border en el ancho total */
         overflow-wrap: break-word; /* Romper palabras largas */
         white-space: normal; /* Asegurar que el texto pueda envolver */
@@ -770,6 +902,7 @@
 
     #nuestro-equipo .quote {
         font-size: var(--font-size-md);
+        text-align: center !important;
     }
 
     #btn-mas-info, #btn-mas-info-objetivos {

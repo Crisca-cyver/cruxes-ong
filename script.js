@@ -914,6 +914,40 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+// === Mostrar/ocultar información del equipo ===
+document.addEventListener('DOMContentLoaded', function() {
+    const btnMasInfoEquipo = document.getElementById('btn-mas-info-equipo');
+    const masInfoEquipo = document.getElementById('mas-info-equipo');
+    if (btnMasInfoEquipo && masInfoEquipo) {
+        function updateMasInfoEquipoText() {
+            const t = translations[currentLanguage];
+            if (t && t.equipo && t.equipo.description) {
+                masInfoEquipo.innerHTML = `<p>${t.equipo.description}</p>`;
+            }
+        }
+        masInfoEquipo.style.display = 'none';
+        btnMasInfoEquipo.textContent = currentLanguage === 'es' ? '+ info...' : '+ info...';
+        btnMasInfoEquipo.addEventListener('click', function toggleInfoEquipo() {
+            if (masInfoEquipo.style.display === 'none' || masInfoEquipo.style.display === '') {
+                updateMasInfoEquipoText();
+                masInfoEquipo.style.display = 'block';
+                btnMasInfoEquipo.textContent = currentLanguage === 'es' ? '- info...' : '- info...';
+            } else {
+                masInfoEquipo.style.display = 'none';
+                btnMasInfoEquipo.textContent = currentLanguage === 'es' ? '+ info...' : '+ info...';
+            }
+        });
+        const originalUpdateTexts = window.updateTexts;
+        window.updateTexts = function() {
+            originalUpdateTexts();
+            masInfoEquipo.style.display = 'none';
+            btnMasInfoEquipo.style.display = 'inline';
+            btnMasInfoEquipo.textContent = currentLanguage === 'es' ? '+ info...' : '+ info...';
+        };
+        btnMasInfoEquipo.style.cursor = 'pointer';
+    }
+});
+
 document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.card-flip').forEach(card => {
     card.addEventListener('click', function() {
