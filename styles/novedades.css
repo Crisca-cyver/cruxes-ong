@@ -15,7 +15,6 @@
     gap: var(--spacing-lg);
     padding: 0;
     padding-bottom: var(--spacing-xl);
-    border-bottom: 2px solid #F2920C;
 }
 
 /* Items de novedad */
