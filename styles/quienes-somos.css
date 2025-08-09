@@ -423,6 +423,23 @@ justify-content: flex-start;
     align-items: start; /* Alinear items al inicio de la columna */
 }
 
+.solidaridad-title, .espiritualidad-title {
+    font-family: var(--font-family);
+    font-size: var(--font-size-xxl); 
+    color: #E84E1D;
+    margin-top: var(--spacing-sm); 
+    margin-left: 3rem;
+}
+
+.objetivo-especifico-img-container img {
+    
+    height: 400px;
+    margin-top: var(--spacing-sm);
+    object-fit: contain;
+    
+    border-radius: var(--border-radius);
+}
+
 #nuestro-equipo .section-title {
     font-family: var(--font-family);
     font-size: var(--font-size-xxl); 
